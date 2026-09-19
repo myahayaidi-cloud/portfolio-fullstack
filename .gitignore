@@ -1,0 +1,57 @@
+# ================================
+# Backend (Laravel)
+# ================================
+portfolio-backend/vendor/
+portfolio-backend/node_modules/
+portfolio-backend/.env
+portfolio-backend/.env.backup
+portfolio-backend/.phpunit.result.cache
+portfolio-backend/storage/*.key
+portfolio-backend/storage/logs/*
+portfolio-backend/storage/framework/cache/*
+portfolio-backend/storage/framework/sessions/*
+portfolio-backend/storage/framework/views/*
+portfolio-backend/public/storage
+portfolio-backend/public/hot
+portfolio-backend/public/uploads
+
+# ================================
+# Frontend (React)
+# ================================
+portfolio-frontend/node_modules/
+portfolio-frontend/dist/
+portfolio-frontend/.env
+portfolio-frontend/.env.local
+portfolio-frontend/.vite/
+
+# ================================
+# IDE / Éditeurs
+# ================================
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# ================================
+# Système d'exploitation
+# ================================
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# ================================
+# Logs et caches
+# ================================
+*.log
+*.cache
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ================================
+# Fichiers temporaires
+# ================================
+*.tmp
+*.temp
+*.bak

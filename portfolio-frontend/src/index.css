@@ -1,0 +1,31 @@
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: #f8f9fa;
+    color: #212529;
+}
+
+h1, h2, h3, h4, h5 {
+    font-weight: 600;
+    color: #1a5276;
+}
+
+.card {
+    border: none;
+    border-radius: 12px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary {
+    background-color: #1a5276;
+    border-color: #1a5276;
+}
+
+.btn-primary:hover {
+    background-color: #154360;
+    border-color: #154360;
+}
