@@ -14,4 +14,7 @@ ENV LOG_CHANNEL stderr
 
 ENV COMPOSER_ALLOW_SUPERUSER 1
 
+# Copier la configuration Nginx personnalisée
+COPY docker/nginx/default.conf /etc/nginx/sites-available/default.conf
+
 CMD ["/start.sh"]
