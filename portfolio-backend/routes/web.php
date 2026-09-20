@@ -39,3 +39,19 @@ Route::get('/check-admin', function () {
         'db_host' => \DB::connection()->getConfig('host'),
     ]);
 });
+Route::get('/reset-admin-password', function () {
+    $user = \App\Models\User::where('email', 'myahayaidi@gmail.com')->first();
+
+    if (!$user) {
+        return response()->json(['message' => 'Admin non trouvé']);
+    }
+
+    $user->password = \Illuminate\Support\Facades\Hash::make('Yahaya2026!');
+    $user->save();
+
+    return response()->json([
+        'message' => 'Mot de passe réinitialisé avec succès',
+        'email' => $user->email,
+        'nouveau_mot_de_passe' => 'Yahaya2026!',
+    ]);
+});
