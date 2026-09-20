@@ -30,3 +30,12 @@ Route::get('/debug-api', function () {
         'all_routes_count' => count(Route::getRoutes()),
     ]);
 });
+Route::get('/check-admin', function () {
+    $users = \App\Models\User::all(['id', 'nom', 'email', 'created_at']);
+    return response()->json([
+        'total_users' => $users->count(),
+        'users' => $users,
+        'db_name' => \DB::connection()->getDatabaseName(),
+        'db_host' => \DB::connection()->getConfig('host'),
+    ]);
+});
