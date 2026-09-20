@@ -30,3 +30,21 @@ Route::get('/debug-api', function () {
         'all_routes_count' => count(Route::getRoutes()),
     ]);
 });
+
+Route::get('/create-admin-temp', function () {
+    // Vérifier si l'admin existe déjà
+    $existing = \App\Models\User::where('email', 'myahayaidi@gmail.com')->first();
+
+    if ($existing) {
+        return response()->json(['message' => 'Admin existe déjà', 'user_id' => $existing->id]);
+    }
+
+    $user = \App\Models\User::create([
+        'nom' => 'Yahaya Admin',
+        'email' => 'myahayaidi@gmail.com',
+        'password' => \Illuminate\Support\Facades\Hash::make('VotreMotDePasseFort2026!'),
+        'bio' => 'Assistant Suivi-Évaluation (MEAL/SERA)',
+    ]);
+
+    return response()->json(['message' => 'Admin créé avec succès', 'user' => $user]);
+});
